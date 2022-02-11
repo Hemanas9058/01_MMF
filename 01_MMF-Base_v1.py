@@ -28,7 +28,7 @@ def not_blank(question, error_message):
 
 # loop to get ticket details
 
-    # get name (can't be blank)
+# get name (can't be blank)
     name = not_blank("Name: ",
     "Sorry - this can't be blank, "
     "please enter your name")

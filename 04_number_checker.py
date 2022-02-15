@@ -1,5 +1,7 @@
 # function goes here
 
+
+# Checks for an integer more than 0
 def int_check(question, low_num, high_num):
 
     error="Please enter a whole number between {} " \

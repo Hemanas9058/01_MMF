@@ -52,8 +52,10 @@ while check_snack == "invalid choice":
     want_snack = input("Do you want to order snacks? ").lower()
     check_snack = string_check(want_snack, yes_no)
 
+# print("Check snack", check_snack)
+
 # If they say yes, ask what snacks they want (and add to our snack order)
-if check_snack == "yes":
+if check_snack == "Yes":
 
     desired_snack = ""
     while desired_snack != "xxx":

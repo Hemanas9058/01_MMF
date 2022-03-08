@@ -108,4 +108,8 @@ if len(snack_order) == 0:
 else:
     print("Snacks Ordered:")
 
+    ''' for item in snack_order:
+        print(item)
+        '''
+
     print(snack_order)

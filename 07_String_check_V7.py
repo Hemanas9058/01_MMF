@@ -38,7 +38,8 @@ def get_snack():
     ["popcorn", "p", "corn", "a"],
     ["M&M's", "m&m's", "mms", "m", "b" ], # first item is M&M
     ["pita chips", "chips", "pc", "pita", "c"],
-    ["water", "w", "d"]
+    ["water", "w", "d"],
+    ["orange juice", "oj", "o", "juice", "orange", "e"]
     ]
 
     # holds snack order for a single user

@@ -140,6 +140,7 @@ while name != "xxx" and ticket_count < MAX_TICKETS:
 
 # print details...
 movie_frame = pandas.DataFrame(movie_data_dict)
+movie_frame = movie_frame.set_index('Name')
 print(movie_frame)
     
 # Calculate Total sales and profit

@@ -77,13 +77,13 @@ movie_frame["Sub Total"] = \
     movie_frame['Water']*price_dict['Water'] + \
     movie_frame['Pita Chips']*price_dict['Pita Chips'] + \
     movie_frame['M&Ms']*price_dict['M&Ms'] + \
-    movie_frame['Orange Juice']*price_dict['Orange Juice']
+    movie_frame['Orange Juice']*price_dict['Popcorn']
 
-movie_frame = movie_frame.reindex(columns=['Ticket', 'M&Ms', 'Orange Juice',
+movie_frame = movie_frame.reindex(columns=['M&Ms', 'Orange Juice',
                                            'Pita Chips', 'Popcorn', 'Water', 'Sub Total'])
 
-# Shorten column names
+#Shorten column names
 movie_frame = movie_frame.rename(columns={'Orange Juice': 'OJ',
-                                          'Pita Chips': 'Chips'})
+                                            'Pita Chips': 'Chips' })
 
 print(movie_frame)

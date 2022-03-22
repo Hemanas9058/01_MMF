@@ -10,7 +10,7 @@ def not_blank(question, error_message):
 
     while not valid:
         response = input(question)
-        
+
         # If name is not blank, program continues
         if response != "":
             return response
@@ -37,7 +37,7 @@ def int_check(question):
             else:
                 return response
 
-        # if an integer is not entered, display an error        
+        # if an integer is not entered, display an error
         except ValueError:
                 print(error)
 
@@ -79,6 +79,13 @@ def get_ticket_price():
 # Main Routine
 
 # set up dictionaries / lists needed to hold data
+
+
+# list of valid responses for payment method
+pay_method = [
+    ["cash", "ca"],
+    ["credit", "cr"]
+]
 
 # initialise loop so that it runs at least once
 MAX_TICKETS = 5
@@ -142,7 +149,7 @@ while name != "xxx" and ticket_count < MAX_TICKETS:
 movie_frame = pandas.DataFrame(movie_data_dict)
 movie_frame = movie_frame.set_index('Name')
 print(movie_frame)
-    
+
 # Calculate Total sales and profit
 ticket_profit = ticket_sales - (5 * ticket_count)
 print("Ticket profit: ${:.2f}".format(ticket_profit))

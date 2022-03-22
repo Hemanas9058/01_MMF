@@ -26,7 +26,7 @@ def int_check(question):
 # main routine goes here
 age = int_check("age: ")
 
-    # check that age is valid
+# check that age is valid
     if age < 12:
         print("Sorry you are too young for this movie")
         continue

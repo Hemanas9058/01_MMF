@@ -52,7 +52,7 @@ def get_snack():
     # , and possible abbreviations etc>
     valid_snacks = [
         ["popcorn", "p", "corn", "a"],
-        ["M&M's", "m&m's", "mms", "m", "b"],  # first item is M&M
+        ["Mms", "M&Ms", "M&M's", "m&m's", "mms", "m", "b"],  # first item is M&M
         ["pita chips", "chips", "pc", "pita", "c"],
         ["water", "w", "d"],
         ["orange juice", "oj", "o", "juice", "orange", "e"]
@@ -227,7 +227,7 @@ movie_data_dict = {
     'Popcorn': popcorn,
     'Water': water,
     'Pita Chips': pita_chips,
-    'M&Ms': mms,
+    'Mms': mms,
     'Orange Juice': orange_juice,
     'Surcharge_Multiplier': surcharge_mult_list
 }
@@ -237,7 +237,7 @@ price_dict = {
     'Popcorn': 2.5,
     'Water': 2,
     'Pita Chips': 4.5,
-    'M&Ms': 3,
+    'Mms': 3,
     'Orange Juice': 3.25
 }
 
@@ -323,15 +323,20 @@ movie_frame = pandas.DataFrame(movie_data_dict)
 movie_frame = movie_frame.set_index('Name')
 
 # create column called 'sub total'
-# fill it price for snacks and ticket
+# fill it price for snacks and ticket]
 
-movie_frame["Sub Total"] = \
-    movie_frame['Ticket'] + \
+# create column called 'Sub Total'
+# fill it price for snacks and ticket
+movie_frame["Snacks"] = \
     movie_frame['Popcorn']*price_dict['Popcorn'] + \
     movie_frame['Water']*price_dict['Water'] + \
     movie_frame['Pita Chips']*price_dict['Pita Chips'] + \
-    movie_frame['M&Ms']*price_dict['M&Ms'] + \
+    movie_frame['Mms']*price_dict['Mms'] + \
     movie_frame['Orange Juice']*price_dict['Popcorn']
+
+movie_frame["Sub Total"] = \
+    movie_frame['Ticket'] + \
+    movie_frame['Snacks']
 
 movie_frame["Surcharge"] = \
     movie_frame["Sub Total"] * movie_frame["Surcharge_Multiplier"]
@@ -339,7 +344,7 @@ movie_frame["Surcharge"] = \
 movie_frame["Total"] = movie_frame["Sub Total"] + \
     movie_frame['Surcharge']
 
-movie_frame = movie_frame.reindex(columns=['Ticket', 'M&Ms', 'Orange Juice',
+movie_frame = movie_frame.reindex(columns=['Ticket', 'Mms', 'Orange Juice',
                                            'Pita Chips', 'Popcorn', 'Water', 'Sub Total'])
 
 # Shorten column names
